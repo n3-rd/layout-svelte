@@ -10,7 +10,10 @@ export default {
 				"black-200": '#333333',
 				"black-300": "#5e5e5e",
 				"bg-100": "#FAFAFA",
-				"bg-200": "#EFEFEF"
+				"bg-200": "#EFEFEF",
+				blue: "#5E8EFF",
+				"blue-hover": "#4375E0",
+				"table-text": "#737379",
 			},
 			fontFamily: {
 				inter: ['Inter', 'sans-serif'],
