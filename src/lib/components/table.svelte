@@ -9,7 +9,7 @@
     ];
 </script>
 
-<div class="w-full overflow-hidden border border-gray-200 rounded-lg">
+<div class="w-full overflow-hiddenrounded-lg">
     <div class="overflow-x-auto no-scrollbar">
         <table class="min-w-full divide-y divide-gray-200 text-table-text">
             <thead class="bg-gray-50">
@@ -21,9 +21,9 @@
                     {/each}
                 </tr>
             </thead>
-            <tbody class="bg-white divide-y divide-gray-200 overflow-y-auto">
+            <tbody class="bg-white overflow-y-auto">
                 {#each items as item (item.id)}
-                    <tr>
+                    <tr class="striped-row">
                         <td class="px-6 py-4 whitespace-nowrap text-sm">{item.id}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm">{item.type}</td>
                         <td class="px-6 py-4 text-sm max-w-xs truncate">{item.description}</td>
@@ -40,7 +40,15 @@
 
 <style>
     .overflow-x-auto {
-        max-height: 86vh; /* Adjust this value as needed */
+        max-height: 86vh;
         overflow-y: auto;
+    }
+
+    .striped-row:nth-child(odd) {
+        background-color: #f9f9f9; 
+    }
+
+    .striped-row:nth-child(even) {
+        background-color: #ffffff; 
     }
 </style>

@@ -1,3 +1,24 @@
+<script>
+
+  import { writable } from 'svelte/store';
+	import AddItemDialog from './add-item-dialog.svelte';
+
+  let isDialogOpen = writable(false);
+  let isListViewOpen = writable(true);
+
+  function openDialog() {
+    isDialogOpen.set(true);
+  }
+
+  function closeDialog() {
+    isDialogOpen.set(false);
+  }
+
+  function toggleListView() {
+    isListViewOpen.set(!$isListViewOpen);
+  }
+</script>
+
 <div class="w-[267px] h-full bg-black-100 sidebar rounded-lg p-2 flex flex-col gap-4 text-white">
     <div class="header w-full flex items-center justify-between">
         <div class="app-title font-space  leading-5 font-bold p-2">
@@ -6,7 +27,10 @@
         <img src="/icons/sidebar.svg" alt="menu" class="w-6 h-6 cursor-pointer">
     </div>
 
-    <button class="w-full bg-black-200 h-9 flex items-center justify-center rounded-lg hover:bg-gray-200 hover:text-black-100 transition-colors border border-black-300 group">
+    <button
+        class="w-full bg-black-200 h-9 flex items-center justify-center rounded-lg hover:bg-gray-200 hover:text-black-100 transition-colors border border-black-300 group"
+        on:click={openDialog}
+    >
         <div class="flex items-center gap-2">
             <img src="/icons/plus.svg" alt="plus" class="w-4 h-4 group-hover:filter group-hover:invert">
             <span class="font-inter text-xs leading-5 font-medium">Add Item</span>
@@ -26,3 +50,5 @@
         </div>
     </div>
 </div>
+
+<AddItemDialog bind:isOpen={$isDialogOpen} onClose={closeDialog} />

@@ -2,8 +2,6 @@
   import Table from '$lib/components/table.svelte';
   import { writable } from 'svelte/store';
   
-
-  // Create a unique set of items
   const uniqueItems = [
     { id: 1, type: "Report", description: "Annual financial report for 2023", attachment: "finance_2023.pdf" },
     { id: 2, type: "Proposal", description: "New product launch proposal", attachment: "product_launch.docx" },
@@ -35,8 +33,7 @@
   );
 
   function handleSearch() {
-    // The filtering is reactive, so we don't need to do anything here
-    // This function is just a placeholder for any additional search logic
+    
   }
 </script>
 
@@ -63,7 +60,7 @@
 
 <style>
   .overflow-x-auto {
-    max-height: 86vh; /* Adjust this value as needed */
+    max-height: 86vh; 
     overflow-y: auto;
   }
 </style>
